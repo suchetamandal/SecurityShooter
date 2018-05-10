@@ -12,7 +12,7 @@
     "macExecutableFilename": "",
     "orientation": "default",
     "packageName": "com.example.gamename",
-    "projectFile": "C:\\Users\\suche\\GDevelop projects\\My project2\\space-shooter.json",
+    "projectFile": "C:\\Users\\suche\\Desktop\\SecurityShooter\\space-shooter.json",
     "useExternalSourceFiles": false,
     "winExecutableFilename": "",
     "winExecutableIconFile": "",
@@ -207,6 +207,14 @@
         "name": "laserRed11.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Phishing attack.png",
+        "kind": "image",
+        "name": "Phishing attack.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -253,6 +261,9 @@
             },
             {
               "name": "GreenEnemy"
+            },
+            {
+              "name": "Phising"
             }
           ]
         },
@@ -606,8 +617,8 @@
           "locked": false,
           "name": "SpaceBackground",
           "width": 816.37,
-          "x": -3.17936,
-          "y": -5.36354,
+          "x": 1,
+          "y": -19,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -1407,6 +1418,36 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "Phising",
+          "width": 0,
+          "x": 604,
+          "y": 93.7233,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "Phising",
+          "width": 0,
+          "x": 302,
+          "y": 423.723,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1938,6 +1979,44 @@
             "g": 255,
             "r": 255
           }
+        },
+        {
+          "name": "Phising",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Phishing attack.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
@@ -3460,7 +3539,12 @@
           "effects": []
         }
       ],
-      "behaviorsSharedData": []
+      "behaviorsSharedData": [
+        {
+          "name": "TopDownMovement",
+          "type": "TopDownMovementBehavior::TopDownMovementBehavior"
+        }
+      ]
     }
   ],
   "externalEvents": [],
