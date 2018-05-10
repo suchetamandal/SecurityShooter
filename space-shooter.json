@@ -12,7 +12,7 @@
     "macExecutableFilename": "",
     "orientation": "default",
     "packageName": "com.example.gamename",
-    "projectFile": "C:\\Users\\suche\\Desktop\\SecurityShooter\\space-shooter.json",
+    "projectFile": "D:\\Github\\SecurityShooter\\space-shooter.json",
     "useExternalSourceFiles": false,
     "winExecutableFilename": "",
     "winExecutableIconFile": "",
@@ -215,6 +215,14 @@
         "name": "Phishing attack.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Identity Theft (1).png",
+        "kind": "image",
+        "name": "Identity Theft (1).png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -264,6 +272,9 @@
             },
             {
               "name": "Phising"
+            },
+            {
+              "name": "IdentityTheft"
             }
           ]
         },
@@ -467,8 +478,8 @@
           "locked": false,
           "name": "Rock",
           "width": 0,
-          "x": 768.852,
-          "y": 521.299,
+          "x": 767,
+          "y": 519,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -612,11 +623,11 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 617.063,
+          "height": 619.063,
           "layer": "SpaceBackground",
           "locked": false,
           "name": "SpaceBackground",
-          "width": 816.37,
+          "width": 798.37,
           "x": 1,
           "y": -19,
           "zOrder": 5,
@@ -1448,6 +1459,21 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "NewObject",
+          "width": 0,
+          "x": 913,
+          "y": 466,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1786,6 +1812,49 @@
           ]
         },
         {
+          "name": "IdentityTheft",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "Life",
+              "value": "8"
+            }
+          ],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Identity Theft",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Identity Theft (1).png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "GreenEnemy",
           "type": "Sprite",
           "updateIfNotVisible": false,
@@ -1984,7 +2053,12 @@
           "name": "Phising",
           "type": "Sprite",
           "updateIfNotVisible": false,
-          "variables": [],
+          "variables": [
+            {
+              "name": "Life",
+              "value": "10"
+            }
+          ],
           "behaviors": [],
           "animations": [
             {
@@ -2065,6 +2139,26 @@
                       "parameters": [
                         "",
                         "\"GameOver\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "HideLayer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Victory\""
                       ],
                       "subInstructions": []
                     }
@@ -2299,7 +2393,7 @@
                           "disabled": false,
                           "folded": false,
                           "type": "BuiltinCommonInstructions::Repeat",
-                          "repeatExpression": "20",
+                          "repeatExpression": "40",
                           "conditions": [],
                           "actions": [
                             {
@@ -2624,6 +2718,176 @@
                                             "EnemyBullet",
                                             "GreenEnemy.X()",
                                             "GreenEnemy.PointY(Centre)",
+                                            ""
+                                          ],
+                                          "subInstructions": []
+                                        },
+                                        {
+                                          "type": {
+                                            "inverted": false,
+                                            "value": "AddForceXY"
+                                          },
+                                          "parameters": [
+                                            "EnemyBullet",
+                                            "-350",
+                                            "0",
+                                            "1"
+                                          ],
+                                          "subInstructions": []
+                                        }
+                                      ],
+                                      "events": []
+                                    }
+                                  ]
+                                }
+                              ],
+                              "parameters": []
+                            },
+                            {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "disabled": false,
+                              "folded": false,
+                              "name": "Phising",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
+                                {
+                                  "disabled": false,
+                                  "folded": false,
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "inverted": false,
+                                        "value": "Timer"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "0.6",
+                                        "\"EnemyShootTimer\""
+                                      ],
+                                      "subInstructions": []
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "inverted": false,
+                                        "value": "ResetTimer"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "\"EnemyShootTimer\""
+                                      ],
+                                      "subInstructions": []
+                                    }
+                                  ],
+                                  "events": [
+                                    {
+                                      "disabled": false,
+                                      "folded": false,
+                                      "type": "BuiltinCommonInstructions::ForEach",
+                                      "object": "Phising",
+                                      "conditions": [],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "inverted": false,
+                                            "value": "Create"
+                                          },
+                                          "parameters": [
+                                            "",
+                                            "EnemyBullet",
+                                            "Phising.X()",
+                                            "Phising.PointY(Centre)",
+                                            ""
+                                          ],
+                                          "subInstructions": []
+                                        },
+                                        {
+                                          "type": {
+                                            "inverted": false,
+                                            "value": "AddForceXY"
+                                          },
+                                          "parameters": [
+                                            "EnemyBullet",
+                                            "-350",
+                                            "0",
+                                            "1"
+                                          ],
+                                          "subInstructions": []
+                                        }
+                                      ],
+                                      "events": []
+                                    }
+                                  ]
+                                }
+                              ],
+                              "parameters": []
+                            },
+                            {
+                              "colorB": 228,
+                              "colorG": 176,
+                              "colorR": 74,
+                              "creationTime": 0,
+                              "disabled": false,
+                              "folded": false,
+                              "name": "IdentityTheft",
+                              "source": "",
+                              "type": "BuiltinCommonInstructions::Group",
+                              "events": [
+                                {
+                                  "disabled": false,
+                                  "folded": false,
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "inverted": false,
+                                        "value": "Timer"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "0.6",
+                                        "\"EnemyShootTimer\""
+                                      ],
+                                      "subInstructions": []
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "inverted": false,
+                                        "value": "ResetTimer"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "\"EnemyShootTimer\""
+                                      ],
+                                      "subInstructions": []
+                                    }
+                                  ],
+                                  "events": [
+                                    {
+                                      "disabled": false,
+                                      "folded": false,
+                                      "type": "BuiltinCommonInstructions::ForEach",
+                                      "object": "IdentityTheft",
+                                      "conditions": [],
+                                      "actions": [
+                                        {
+                                          "type": {
+                                            "inverted": false,
+                                            "value": "Create"
+                                          },
+                                          "parameters": [
+                                            "",
+                                            "EnemyBullet",
+                                            "IdentityTheft.X()",
+                                            "IdentityTheft.PointY(Centre)",
                                             ""
                                           ],
                                           "subInstructions": []
@@ -3346,6 +3610,14 @@
                   "parameters": []
                 }
               ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [],
+              "events": []
             }
           ],
           "parameters": []
@@ -3534,6 +3806,12 @@
         },
         {
           "name": "GameOver",
+          "visibility": false,
+          "cameras": [],
+          "effects": []
+        },
+        {
+          "name": "Victory",
           "visibility": false,
           "cameras": [],
           "effects": []
